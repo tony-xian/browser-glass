@@ -1,0 +1,75 @@
+/* Follow HackerTube's system theme with the shared Tahoe wallpaper. */
+:root {
+  color-scheme: light;
+  --cgh-site-tint: rgba(255, 255, 255, .34);
+  --cgh-hackertube-glass: rgba(239, 241, 245, .78);
+  --cgh-hackertube-card: rgba(255, 255, 255, .45);
+  --cgh-hackertube-hover: rgba(255, 255, 255, .72);
+  --fg: #4c4f69;
+  --mut: #5c5f77;
+  --acc: #1e66f5;
+  --line: rgba(76, 79, 105, .2);
+  --card: var(--cgh-hackertube-card);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --cgh-site-tint: rgba(17, 17, 27, .34);
+    --cgh-hackertube-glass: rgba(30, 30, 46, .78);
+    --cgh-hackertube-card: rgba(49, 50, 68, .45);
+    --cgh-hackertube-hover: rgba(69, 71, 90, .72);
+    --fg: #cdd6f4;
+    --mut: #bac2de;
+    --acc: #89b4fa;
+    --line: rgba(205, 214, 244, .2);
+  }
+}
+
+.top,
+main.wrap,
+.foot {
+  background: var(--cgh-hackertube-glass) !important;
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+}
+
+main.wrap {
+  margin: 24px auto;
+  padding: 1px 24px 24px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+}
+
+.card {
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--cgh-hackertube-card);
+}
+
+.card:is(:hover, :focus-within),
+.tag:is(:hover, :focus-visible) {
+  background: var(--cgh-hackertube-hover);
+}
+
+.tag,
+#q {
+  background: var(--cgh-hackertube-card);
+}
+
+a:focus-visible,
+button:focus-visible,
+#q:focus-visible {
+  outline: 2px solid var(--acc);
+  outline-offset: 3px;
+}
+
+/* Keep narrow screens inset without changing the site's grid or player. */
+@media (max-width: 1132px) {
+  main.wrap { margin-inline: 16px; }
+}
+
+@media (max-width: 600px) {
+  main.wrap { padding-inline: 16px; }
+}

@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "priority": 1,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "url": "https://hackertube.io/"
+      }
+    },
+    "condition": {
+      "regexFilter": "^https?://(www\\.)?youtube\\.com/?(\\?.*)?$",
+      "resourceTypes": ["main_frame"]
+    }
+  }
+]

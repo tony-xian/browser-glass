@@ -2,3 +2,4 @@ lessons.json
 __pycache__/
 .DS_Store
 .playwright-mcp/
+_metadata/

@@ -52,5 +52,5 @@ test('new tab uses the shared wallpaper runtime and has all local assets', () =>
   assert.match(html, /src="wallpaper.js"/);
   assert.match(html, /href="wallpaper-sites.css"/);
   for (const match of html.matchAll(/(?:src|href)="([^"]+)"/g)) assert.ok(fs.existsSync(path.join(root, match[1])));
-  assert.deepEqual(manifest.permissions, ['storage']);
+  assert.deepEqual(manifest.permissions, ['storage', 'declarativeNetRequestWithHostAccess']);
 });

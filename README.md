@@ -1,14 +1,16 @@
 # Browser Glass
 
-Tahoe wallpaper and glass styling for ChatGPT, DuckDuckGo, YouTube, Docker, GitHub, and Reddit, with ChatGPT reasoning shortcuts and Markentum daily reading lessons on the new tab page.
+Tahoe wallpaper and glass styling for ChatGPT, DuckDuckGo, YouTube, HackerTube, Docker, GitHub, and Reddit, with ChatGPT reasoning shortcuts and Markentum daily reading lessons on the new tab page.
 
-Version 0.9.0.
+Version 0.9.2.
 
 - Uses a still captured from the desktop's Tahoe wallpaper, sized to the display width.
 - Aligns the wallpaper with the window's desktop position, with browser-frame compensation and automatic move/resize updates.
 - Gives ChatGPT a glass appearance with Catppuccin colors, blur, and high-contrast text selection.
 - Follows DuckDuckGo's light or dark theme and uses JetBrainsMono Nerd Font for search results.
 - Gives YouTube a wallpaper background and blurred glass header and sidebar, following its light or dark theme.
+- Redirects the YouTube homepage to HackerTube while preserving video and other YouTube links.
+- Gives hackertube.io a wallpaper background, glass reading surfaces and video cards, with Catppuccin colors following the system's light or dark theme.
 - Reveals the wallpaper around YouTube's watch-page player and disables its ambient background glow.
 - Adds glass navigation and reading surfaces to Docker Docs, following its light or dark theme, and translucent sections on docker.com.
 - Adds the wallpaper and glass navigation, posts, and sidebars to Reddit, following its light or dark theme.
@@ -22,9 +24,26 @@ Version 0.9.0.
 1. Open `vivaldi://extensions`.
 2. Enable **Developer mode**.
 3. Choose **Load unpacked** and select this folder.
-4. Refresh ChatGPT, DuckDuckGo, YouTube, Docker, GitHub, and Reddit tabs after loading the extension.
+4. Refresh ChatGPT, DuckDuckGo, YouTube, HackerTube, Docker, GitHub, and Reddit tabs after loading the extension.
 
 Shortcut: **Shift+Tab** cycles Instant → Medium → High → Instant. XHigh/Pro remain manual-only.
+
+## YouTube homepage redirect
+
+Browser Glass includes an enabled redirect rule in `redirect-rules.json`:
+
+- Pattern type: Regular Expression
+- Include pattern: `^https?://(www\.)?youtube\.com/?(\?.*)?$`
+- Redirect to: `https://hackertube.io/`
+- Example URL: `https://www.youtube.com/`
+
+The rule applies to top-level page requests over HTTP or HTTPS, including
+homepage query parameters. Video, Shorts, search, channel, and embedded-player
+URLs remain available. YouTube's navigation within an already open page may
+not make a new page request and therefore may bypass the redirect.
+
+Reload Browser Glass at `vivaldi://extensions` after updating, and allow its
+YouTube site access if prompted.
 
 ## Vivaldi window frame
 
