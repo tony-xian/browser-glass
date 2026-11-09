@@ -47,10 +47,12 @@ YouTube site access if prompted.
 
 ## Vivaldi window frame
 
-The optional `vivaldi-ui/frame.css` stylesheet reduces Vivaldi 8.2’s auto-hide
+The optional `vivaldi-ui/frame.css` stylesheet reduces Vivaldi’s auto-hide
 window surround from 6px to 0px. Suitcase’s `vivaldi-setup.py` selects this folder
 for both profiles when Browser Glass is checked out beside Suitcase. This
 stylesheet styles browser chrome; it is separate from extension content scripts.
+Its selector matches Vivaldi 8.3’s `:not(.first-start)` specificity so the
+override takes precedence. Restart Vivaldi after changing this stylesheet.
 
 ## Markentum start page
 

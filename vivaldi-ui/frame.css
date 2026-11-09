@@ -1,4 +1,4 @@
-/* Vivaldi 8.2: remove the colored surround in the auto-hide layout. */
-#browser.auto-hide.unified-ui {
+/* Match Vivaldi 8.3's frame specificity; custom CSS loads after common.css. */
+#browser.auto-hide.unified-ui:not(.first-start) {
   padding: 0;
 }
