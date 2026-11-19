@@ -2,7 +2,7 @@
 
 Tahoe wallpaper and glass styling for ChatGPT, DuckDuckGo, YouTube, HackerTube, Docker, GitHub, and Reddit, with ChatGPT reasoning shortcuts and Markentum daily reading lessons on the new tab page.
 
-Version 0.9.2.
+Version 0.9.3.
 
 - Uses a still captured from the desktop's Tahoe wallpaper, sized to the display width.
 - Aligns the wallpaper with the window's desktop position, with browser-frame compensation and automatic move/resize updates.
@@ -27,6 +27,19 @@ Version 0.9.2.
 4. Refresh ChatGPT, DuckDuckGo, YouTube, HackerTube, Docker, GitHub, and Reddit tabs after loading the extension.
 
 Shortcut: **Shift+Tab** cycles Instant → Medium → High → Instant. XHigh/Pro remain manual-only.
+
+## Same extension ID on every Mac
+
+The public `key` in `manifest.json` pins Browser Glass's ID to
+`pmbjpoejlcgagpcelbcchgnffmcggofd`, regardless of username or checkout folder.
+Keep this key unchanged. It is public identity data, not a private signing key.
+
+When upgrading from 0.9.2, load this folder again with **Load unpacked** in each
+Vivaldi profile and verify the ID above is enabled. Remove the old Browser Glass
+entry after the new one works. This is a new extension identity, so its theme
+and lesson rotation preferences start fresh. The bundled lessons are unchanged.
+Repeat on the other Mac using the same updated checkout. Startup and homepage
+URLs can then sync safely between Macs.
 
 ## YouTube homepage redirect
 
@@ -65,9 +78,11 @@ Reload Browser Glass at `vivaldi://extensions`, then disable the separate
 Markentum extension so only Browser Glass controls new tabs. In Vivaldi Settings
 → Tabs → New Tab Page, select **Start Page** and enable **Controlled by Extension**.
 For startup windows, use **Last Session**, or add the unified page under
-Settings → General → Startup with → Specific Pages. Copy Browser Glass's ID
-from `vivaldi://extensions` and use `chrome-extension://<that-ID>/index.html`;
-old Markentum startup URLs still point to the separate extension.
+Settings → General → Startup with → Specific Pages. Use
+`chrome-extension://pmbjpoejlcgagpcelbcchgnffmcggofd/index.html` for both startup
+and homepage URLs on every Mac. Replace previous Browser Glass or Markentum
+URLs, including those with IDs `fbcjcpafoenioeajhjniojncdbglcnen` and
+`dmgmecciigkdhhocgmhfjjhhngdeenab`.
 
 Generate or refresh lessons from your local reading vault:
 

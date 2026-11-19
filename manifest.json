@@ -1,7 +1,8 @@
 {
   "manifest_version": 3,
   "name": "Browser Glass",
-  "version": "0.9.2",
+  "version": "0.9.3",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA9b/mb/6OAOAOzIRXtb8+BVON9Yy8fu6YxqVcd0aPlLj80VGXr6csSZeESMfc2if4t2XsYem1VTOlIUkuSdCtpOdFW+31Me0JV94BeRh1jbafmG7m3NT9M4b7bsu4FxAU2NKNeNZviJJ+L9QhzNbfTnw8SWhwKFO05aBbOiCU+wlPJ2HE0pCmf0gTcPx7lk2JSlOd+hS8xVzJnJ4Bi3R7XMbxHnqxV0TM4PqEUFIXL9YkAzG49jXl8IjJCbE1yUTzShoLBESLUH2h0BO7g17cdpm7pmTyYl+qD/EX6VTS5Q0QXi1b+IZqWUPLN5k5ZZ0CkCFgcc5Xt7RGWRHET3fkhQIDAQAB",
   "description": "Tahoe wallpaper and glass across your browser, with Markentum daily reading lessons on the new tab page.",
   "content_scripts": [
     {
