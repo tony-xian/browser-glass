@@ -5,7 +5,7 @@
     "action": {
       "type": "redirect",
       "redirect": {
-        "url": "https://hackertube.io/"
+        "url": "https://hackertube.org/"
       }
     },
     "condition": {

@@ -55,7 +55,7 @@
     },
     {
       "matches": [
-        "https://hackertube.io/*"
+        "https://hackertube.org/*"
       ],
       "js": [
         "wallpaper.js"
@@ -132,7 +132,7 @@
         "https://duckduckgo.com/*",
         "https://www.youtube.com/*",
         "https://youtube.com/*",
-        "https://hackertube.io/*",
+        "https://hackertube.org/*",
         "https://docs.docker.com/*",
         "https://docker.com/*",
         "https://www.docker.com/*",

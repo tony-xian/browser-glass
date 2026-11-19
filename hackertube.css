@@ -1,75 +1,95 @@
-/* Follow HackerTube's system theme with the shared Tahoe wallpaper. */
+/* HackerTube.org: shared Tahoe wallpaper with the site's theme controls. */
 :root {
   color-scheme: light;
   --cgh-site-tint: rgba(255, 255, 255, .34);
   --cgh-hackertube-glass: rgba(239, 241, 245, .78);
   --cgh-hackertube-card: rgba(255, 255, 255, .45);
   --cgh-hackertube-hover: rgba(255, 255, 255, .72);
-  --fg: #4c4f69;
-  --mut: #5c5f77;
-  --acc: #1e66f5;
-  --line: rgba(76, 79, 105, .2);
-  --card: var(--cgh-hackertube-card);
+  --bg: #eff1f5 !important;
+  --bg2: var(--cgh-hackertube-card) !important;
+  --bg3: var(--cgh-hackertube-hover) !important;
+  --text: #4c4f69 !important;
+  --muted: #5c5f77 !important;
+  --good: #1e66f5 !important;
+  --line: rgba(76, 79, 105, .2) !important;
+  --chip: var(--cgh-hackertube-card) !important;
+  --chip-on: #4c4f69 !important;
+  --chip-on-text: #eff1f5 !important;
+  --hover: var(--cgh-hackertube-hover) !important;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
     color-scheme: dark;
     --cgh-site-tint: rgba(17, 17, 27, .34);
     --cgh-hackertube-glass: rgba(30, 30, 46, .78);
     --cgh-hackertube-card: rgba(49, 50, 68, .45);
     --cgh-hackertube-hover: rgba(69, 71, 90, .72);
-    --fg: #cdd6f4;
-    --mut: #bac2de;
-    --acc: #89b4fa;
-    --line: rgba(205, 214, 244, .2);
+    --bg: #1e1e2e !important;
+    --text: #cdd6f4 !important;
+    --muted: #bac2de !important;
+    --good: #89b4fa !important;
+    --line: rgba(205, 214, 244, .2) !important;
+    --chip-on: #cdd6f4 !important;
+    --chip-on-text: #1e1e2e !important;
   }
 }
 
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --cgh-site-tint: rgba(17, 17, 27, .34);
+  --cgh-hackertube-glass: rgba(30, 30, 46, .78);
+  --cgh-hackertube-card: rgba(49, 50, 68, .45);
+  --cgh-hackertube-hover: rgba(69, 71, 90, .72);
+  --bg: #1e1e2e !important;
+  --text: #cdd6f4 !important;
+  --muted: #bac2de !important;
+  --good: #89b4fa !important;
+  --line: rgba(205, 214, 244, .2) !important;
+  --chip-on: #cdd6f4 !important;
+  --chip-on-text: #1e1e2e !important;
+}
+
 .top,
-main.wrap,
-.foot {
+.side,
+.help-card {
   background: var(--cgh-hackertube-glass) !important;
   -webkit-backdrop-filter: blur(16px);
   backdrop-filter: blur(16px);
 }
 
-main.wrap {
-  margin: 24px auto;
-  padding: 1px 24px 24px;
-  border: 1px solid var(--line);
-  border-radius: 16px;
+main#view {
+  background: transparent !important;
 }
 
-.card {
+.vcard,
+.srow,
+.plcard,
+.areacard,
+.desc,
+.setting {
   padding: 10px;
   border: 1px solid var(--line);
   border-radius: 12px;
-  background: var(--cgh-hackertube-card);
+  background: var(--cgh-hackertube-card) !important;
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
 }
 
-.card:is(:hover, :focus-within),
-.tag:is(:hover, :focus-visible) {
-  background: var(--cgh-hackertube-hover);
+.vcard:is(:hover, :focus-within),
+.srow:is(:hover, :focus-within),
+.plcard:is(:hover, :focus-within) {
+  background: var(--cgh-hackertube-hover) !important;
 }
 
-.tag,
+.search button,
 #q {
-  background: var(--cgh-hackertube-card);
+  background: var(--cgh-hackertube-card) !important;
 }
 
 a:focus-visible,
 button:focus-visible,
 #q:focus-visible {
-  outline: 2px solid var(--acc);
+  outline: 2px solid var(--good);
   outline-offset: 3px;
-}
-
-/* Keep narrow screens inset without changing the site's grid or player. */
-@media (max-width: 1132px) {
-  main.wrap { margin-inline: 16px; }
-}
-
-@media (max-width: 600px) {
-  main.wrap { padding-inline: 16px; }
 }

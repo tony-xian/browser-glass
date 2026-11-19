@@ -14,7 +14,7 @@ test('YouTube homepage redirect is enabled and limited to top-level pages', () =
   assert.ok(manifest.host_permissions.includes('*://youtube.com/*'));
   assert.ok(manifest.host_permissions.includes('*://www.youtube.com/*'));
   assert.deepEqual(rule.condition.resourceTypes, ['main_frame']);
-  assert.deepEqual(rule.action, { type: 'redirect', redirect: { url: 'https://hackertube.io/' } });
+  assert.deepEqual(rule.action, { type: 'redirect', redirect: { url: 'https://hackertube.org/' } });
 });
 
 test('all requested homepage forms redirect', () => {
@@ -41,6 +41,6 @@ test('video, discovery, embed, and unrelated URLs remain available', () => {
     'https://m.youtube.com/',
     'https://youtube.com.example.com/',
     'https://example.com/?next=https://www.youtube.com/',
-    'https://hackertube.io/',
+    'https://hackertube.org/',
   ]) assert.equal(pattern.test(url), false, url);
 });

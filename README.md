@@ -10,7 +10,7 @@ Version 0.9.2.
 - Follows DuckDuckGo's light or dark theme and uses JetBrainsMono Nerd Font for search results.
 - Gives YouTube a wallpaper background and blurred glass header and sidebar, following its light or dark theme.
 - Redirects the YouTube homepage to HackerTube while preserving video and other YouTube links.
-- Gives hackertube.io a wallpaper background, glass reading surfaces and video cards, with Catppuccin colors following the system's light or dark theme.
+- Gives hackertube.org a wallpaper background, glass header, sidebar and video cards, with Catppuccin colors following the site's theme setting or system preference.
 - Reveals the wallpaper around YouTube's watch-page player and disables its ambient background glow.
 - Adds glass navigation and reading surfaces to Docker Docs, following its light or dark theme, and translucent sections on docker.com.
 - Adds the wallpaper and glass navigation, posts, and sidebars to Reddit, following its light or dark theme.
@@ -34,7 +34,7 @@ Browser Glass includes an enabled redirect rule in `redirect-rules.json`:
 
 - Pattern type: Regular Expression
 - Include pattern: `^https?://(www\.)?youtube\.com/?(\?.*)?$`
-- Redirect to: `https://hackertube.io/`
+- Redirect to: `https://hackertube.org/`
 - Example URL: `https://www.youtube.com/`
 
 The rule applies to top-level page requests over HTTP or HTTPS, including
